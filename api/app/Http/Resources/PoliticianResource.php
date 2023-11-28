@@ -19,6 +19,8 @@ class PoliticianResource extends JsonResource
             'name' => $this->name,
             'role' => $this->role,
             'img_url' => $this->img_url,
+            'role_started' => $this->role_started,
+            'role_ended' => $this->role_ended,
         ];
     }
 }
