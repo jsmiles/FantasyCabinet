@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('img_url');
             $table->date('role_started');
             $table->date('role_ended');
+            $table->string('county_of_birth');
+            $table->string('undergraduate_university');
+            $table->string('constituency');
             $table->timestamps();
         });
     }

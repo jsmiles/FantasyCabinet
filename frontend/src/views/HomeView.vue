@@ -5,9 +5,9 @@ import MainTable from '../components/MainTable.vue';
 
 <template>
   <div class="flex justify-center gap-4 my-8">
-    <CardTemplate />
-    <CardTemplate />
-    <CardTemplate />
+    <CardTemplate :role="'Prime Minister'" />
+    <CardTemplate :role="'Chancellor'" />
+    <CardTemplate :role="'Foreign Secretary'" />
   </div>
   <div>
     <MainTable class="max-w-7xl mx-auto" />

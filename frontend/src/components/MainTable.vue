@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import { RouterLink } from 'vue-router';
 import apiClient from '../services/api';
 
 const data = ref([]);
@@ -17,11 +18,13 @@ onMounted(fetchData);
 </script>
 
 <template>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div
+    class="relative overflow-x-auto shadow-md sm:rounded-lg hover:shadow-xl border border-slate-400"
+  >
     <div
-      class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4"
+      class="bg-white flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4"
     >
-      <div>
+      <div class="m-2">
         <button
           id="dropdownRadioButton"
           data-dropdown-toggle="dropdownRadio"
@@ -168,7 +171,7 @@ onMounted(fetchData);
         </div>
       </div>
       <label for="table-search" class="sr-only">Search</label>
-      <div class="relative">
+      <div class="relative p-2">
         <div
           class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none"
         >
@@ -217,20 +220,28 @@ onMounted(fetchData);
         >
           <td
             scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            <img :src="d.img_url" height="100" width="100" />
+            <img :src="d.img_url" height="60" width="40" />
           </td>
-          <td class="px-6 py-4">{{ d.name }}</td>
-          <td class="px-6 py-4">{{ d.role }}</td>
-          <td class="px-6 py-4">{{ d.role_started }}</td>
-          <td class="px-6 py-4">{{ d.role_started }}</td>
-          <td class="px-6 py-4">
-            <a
-              href="#"
-              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >Edit</a
+          <td class="px-6 py-2">{{ d.name }}</td>
+          <td class="px-6 py-2">{{ d.role }}</td>
+          <td class="px-6 py-2">{{ d.role_started }}</td>
+          <td class="px-6 py-2">{{ d.role_ended }}</td>
+          <td class="px-6 py-2">
+            <RouterLink
+              :to="`/show/${d.id}`"
+              target="_blank"
+              class="font-medium text-white bg-blue-500 mx-1 p-2 rounded hover:bg-blue-700"
             >
+              Learn More
+            </RouterLink>
+            <RouterLink
+              to="/"
+              class="font-medium text-white bg-green-500 mx-1 p-2 rounded hover:bg-green-700"
+            >
+              Select
+            </RouterLink>
           </td>
         </tr>
       </tbody>
