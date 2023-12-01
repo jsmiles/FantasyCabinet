@@ -44,6 +44,16 @@ class DatabaseSeeder extends Seeder
                 'undergraduate_university' => 'Oxford',
                 'constituency' => 'Richmond (Yorks)'
             ],
+            [
+                'name' => 'Philip Hammond',
+                'role' => 'foreign_secretary',
+                'img_url' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Official_portrait_of_Mr_Philip_Hammond_crop_2.jpg/800px-Official_portrait_of_Mr_Philip_Hammond_crop_2.jpg',
+                'role_started' => '2014-07-15',
+                'role_ended' => '2016-07-13',
+                'county_of_birth' => 'Essex',
+                'undergraduate_university' => 'Oxford',
+                'constituency' => 'Runnymede and Weybridge'
+            ],
         ]);
     }
 }
